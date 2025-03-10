@@ -52,7 +52,7 @@ Noise comparison from the LTC1867 (16 bit), a Cortex M4 (16 bit) and an ESP32 (1
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/Comparison.jpg)
 <br>
 <br>
-Typical noise from analogRead vs this ADC chip, shown are 10 averages per point and sandwitched between and upper and lower guardrail. The ADC noise performace is and improvement over the cortex M4 chip
+Noise from from the LTC1867 (16 bit), a Cortex M4 (16 bit) using analogRead() and analogReadAveraging(). Shown are 10 averages per point and sandwitched between and upper and lower guardrail.
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/16bit_10averages.jpg)
 <br>
 
