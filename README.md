@@ -39,8 +39,7 @@ Optionally you can
    <br>
    object.analogReadAveraging(count) where count can be 1 to 1000
    
-<br>
-<br>
+
 <br>
 Typical wiring, note the use of a buffer to shift the output of MISO (DO) to be compatible with 3v3 MCU's
 
