@@ -47,6 +47,7 @@ bool LTC1867::init() {
 	CH = CH0;	
 	UNI = UNIPOLAR;
 	SLP = AWAKE;
+	counter = 1;
 	
 	// this may not be a good test since CH0 may be grounded, but it's better than nothing...
 	test = analogRead(CH0);
@@ -60,16 +61,35 @@ bool LTC1867::init() {
 
 }
 
+
+
 uint16_t LTC1867::analogRead(uint8_t Channel) {
 	
 	CH = Channel;
+	buildControlByte();
+	if (counter == 1){
+		return readBits();
+	}
+	
+	else {
+		uint32_t sum = 0;
+		for (uint16_t i = 0; i < counter; i++){
+			sum = sum + (uint32_t) readBits();
+		}
+		
+		sum = sum/counter;
+		return sum;
+	}
+}
+
+
+uint16_t LTC1867::readBits() {
 	
 	if (SLP == SLEEP){
 		setSleepMode(AWAKE);
+		delay(60); // data sheet says to wait 60 ma, not sure the is the correct implementation of wake
 	}
 	
-	
-	buildControlByte();
 	SPI.beginTransaction(SPISettings(SPI_SPEED, MSBFIRST, SPI_MODE0));
 
 	digitalWrite(cspin, HIGH);
@@ -104,10 +124,34 @@ void LTC1867::buildControlByte() {
 
 
 void LTC1867::setSleepMode(uint8_t Mode){
-	if (Mode > 1){
-		Mode = 1;
-	}
 	SLP = Mode;
+	if (Mode > 1){
+		SLP = 1;
+	}
+	
 }
 
- 
+void LTC1867::setVRef(float VRef = 2.5f){
+	vref = VRef;
+	if (VRef < 0.0){
+		vref = 2.5f;
+	}
+	
+}
+		
+float LTC1867::getVolts(uint8_t Channel){
+	return analogRead(CH0) * vref / 65536.0f;
+}
+		
+
+ void LTC1867::analogReadAveraging(uint16_t Counter){
+	 counter = Counter;
+	 
+	if (Counter < 1){
+		counter = 1;
+	}
+		if (Counter >1000){
+		counter = 1000;
+	}
+	
+}
