@@ -6,19 +6,14 @@ This library is itended for microcontroller applications using Arduino, ESP, Tee
 Perfomance is as follows
 <table>
   <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
+    <th>Data</th>
+    <th>Teensy 3.2</th>
+    <th>LTC1867</th>
   </tr>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
+    <td>analogRead</td>
+    <td>176 uS</td>
+    <td> 17 uS</td>
   </tr>
   <tr>
     <td>Ernst Handel</td>
