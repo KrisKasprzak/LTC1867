@@ -48,11 +48,11 @@ Typical wiring, note the use of a buffer to shift the output of MISO (DO) to be 
 <br>
 <br>
 <br>
-Noise comparison from the LTC1867 (16 bit), a Cortex M4 (16 bit) and an ESP32 (12 bit as 16 bit is not available). shown are 1 average per point and sandwitched between and upper and lower guardrails. The ADC noise performace is improvement over the cortex M4 chip, the ESP32 suffers.
+Noise comparison from the LTC1867 (16 bit), a Cortex M4 (16 bit) and an ESP32 (12 bit as 16 bit is not available). Note that no input filtering was used in this test. shown are 1 average per point and sandwitched between and upper and lower guardrails. The ADC noise performace is improvement over the cortex M4 chip, the ESP32 suffers.
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/Comparison.jpg)
 <br>
 <br>
-Noise from from the LTC1867 (16 bit), a Cortex M4 (16 bit) using analogRead() and analogReadAveraging(). Shown are 10 averages per point and sandwitched between and upper and lower guardrail.
+Noise from from the LTC1867 (16 bit), a Cortex M4 (16 bit) using analogRead() and analogReadAveraging(). Note that no input filtering was used in this test. Shown are 10 averages per point and sandwitched between and upper and lower guardrail.
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/16bit_10averages.jpg)
 <br>
 
