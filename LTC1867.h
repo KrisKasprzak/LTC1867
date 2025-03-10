@@ -98,6 +98,12 @@ class  LTC1867 {
 		
 		void setSleepMode(uint8_t Mode);
 		
+		void setVRef(float VRef);
+		
+		void analogReadAveraging(uint16_t Counter);			 
+		
+		float getVolts(uint8_t Channel);
+		
 	private:
 
 		uint8_t cspin = 0;
@@ -105,11 +111,12 @@ class  LTC1867 {
 		uint8_t UNI = 0;
 		uint8_t SLP = 0;
 		uint8_t CBYTE = 0;
+		uint16_t counter = 1;
+		uint16_t bits = 0;		
 		uint8_t Data[2] = {0,0};
-
-		void buildControlByte();
-		
-		
+		float vref = 0.0f;
+		void buildControlByte();	
+		uint16_t readBits();			
 		
 };
 
