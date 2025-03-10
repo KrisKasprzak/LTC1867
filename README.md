@@ -48,6 +48,10 @@ Typical wiring, note the use of a buffer to shift the output of MISO (DO) to be 
 <br>
 <br>
 <br>
+Typical noise from analogRead vs this ADC chip, shown are 1 average per point and sandwitched between and upper and lower guardrails. The ADC noise performace is and much improvement over the cortex M4 chip
+![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/16bit_1averages.jpg)
+<br>
+<br>
 Typical noise from analogRead vs this ADC chip, shown are 10 averages per point and sandwitched between and upper and lower guardrail. The ADC noise performace is and improvement over the cortex M4 chip
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/16bit_10averages.jpg)
 <br>
