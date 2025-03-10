@@ -9,13 +9,19 @@ Perfomance is as follows
 <table>
   <tr>
     <th>Data</th>
-    <th>Teensy 3.2</th>
     <th>LTC1867</th>
+    <th>Teensy 3.2</th>
+    <th>Teensy 4.0</th>
+    <th>ESP32</th>
+    <th>Arduino Nano</th>   
   </tr>
   <tr>
     <td>analogRead</td>
     <td>  6 uS</td>
     <td> 17 uS</td>
+    <td> ??? uS</td>
+    <td> 243 uS</td>
+    <td> ??? uS</td>
   </tr>
 </table>
 
