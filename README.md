@@ -22,7 +22,19 @@ Implentation of this library is straightforward
 1. include the library
 2. create an object instance(s)
 3. initialize the object(s)
-4. call object.analogRead(channel).
+4. call object.analogRead(channel)
+
+Optionally you can
+1. change the VRef (see the data sheet for how to override the internal voltage regulator
+  object.setVRef(value);
+
+2. Automatically convert the output to a voltage
+   object.getVolts(channel);
+
+3. Automatically read and average several data points
+   object.analogReadAveraging(count) where count can be 1 to 1000
+   
+
 
 <br>
 <br>
