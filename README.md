@@ -6,7 +6,7 @@ Text goes here
 <br>
 <br>
 
-![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/LTCvsTeens32-16b.jpg)
+![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/LTCvsTeensy32-16b.jpg)
 
-![header image](https://raw.github.com/KrisKasprzak/ILI9341_t3_Menu/master/Images/0003.jpg)
+
 
