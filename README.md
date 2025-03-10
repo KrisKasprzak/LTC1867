@@ -1,8 +1,6 @@
 
 <b><h2><center>Library for the LTC1867, a 16 bit analog to digital converter from Analog Devices</center></h1></b>
 
-[![GitHub All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
-
 [![GitHub All Releases](https://img.shields.io/github/downloads/KrisKasprzak/LTC1867/total.svg)]()
 
 This library is itended for microcontroller applications using Arduino, ESP, Teensy (3.x to 4.x) where additional analog inputs or higher resulution inputs are needed. This library supports all the features offered by the LTC1867 such as reading an input channel in single or differential mode, using GND or CH7 as the common pin, and putting the analog to digital converter to sleep to save power between infrequent reads.
