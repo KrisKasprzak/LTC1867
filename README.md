@@ -3,7 +3,7 @@
 
 [![GitHub All Releases](https://img.shields.io/github/downloads/KrisKasprzak/LTC1867/total.svg)]()
 
-This library is itended for microcontroller applications using Arduino, ESP, Teensy (3.x to 4.x) where additional analog inputs or higher resulution inputs are needed. This library supports all the features offered by the LTC1867 such as reading an input channel in single or differential mode, using GND or CH7 as the common pin, and putting the analog to digital converter to sleep to save power between infrequent reads.
+This library is itended for microcontroller applications using Teensy (3.x to 4.x), and ESP's where additional analog inputs or higher resulution inputs are needed. This library supports all the features offered by the LTC1867 such as reading an input channel in single or differential mode, using GND or CH7 as the common pin, and putting the analog to digital converter to sleep to save power between infrequent reads.
 
 Perfomance is as follows
 <table>
@@ -13,7 +13,6 @@ Perfomance is as follows
     <th>Teensy 3.2</th>
     <th>Teensy 4.0</th>
     <th>ESP32</th>
-    <th>Arduino Nano</th>   
   </tr>
   <tr>
     <td>analogRead</td>
@@ -21,7 +20,6 @@ Perfomance is as follows
     <td>  6 uS</td>
     <td> ??? uS</td>
     <td> 243 uS</td>
-    <td> ??? uS</td>
   </tr>
 </table>
 
