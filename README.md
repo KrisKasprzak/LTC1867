@@ -6,4 +6,4 @@ Text goes here
 <br>
 <br>
 
-![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/LTCvsTeens32-16b.jpg)
+![header image](https://raw.github.com/KrisKasprzak/LTC1867/images/LTCvsTeens32-16b.jpg)
