@@ -43,6 +43,7 @@ Optionally you can
 <br>
 <br>
 Typical wiring, note the use of a buffer to shift the output of MISO (DO) to be compatible with 3v3 MCU's
+
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/TypicalWiring.jpg)
 <br>
 <br>
