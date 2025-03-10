@@ -5,8 +5,8 @@ Text goes here
 
 <br>
 <br>
-![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/TypicalWiring.jpg)<br>
 
+![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/TypicalWiring.jpg)
 
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/2.5VRef.jpg)
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/LTCvsTeens32-12bx21.jpg)
