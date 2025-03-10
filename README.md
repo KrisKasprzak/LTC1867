@@ -26,16 +26,17 @@ Implentation of this library is straightforward
 
 Optionally you can
 1. change the VRef (see the data sheet for how to override the internal voltage regulator
+  <br>
   object.setVRef(value);
 
 2. Automatically convert the output to a voltage
+   <br>
    object.getVolts(channel);
 
 3. Automatically read and average several data points
+   <br>
    object.analogReadAveraging(count) where count can be 1 to 1000
    
-
-
 <br>
 <br>
 
