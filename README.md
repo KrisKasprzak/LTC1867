@@ -14,7 +14,7 @@ Perfomance is as follows
   </tr>
   <tr>
     <td>analogRead</td>
-    <td>176 uS</td>
+    <td>  6 uS</td>
     <td> 17 uS</td>
   </tr>
 </table>
@@ -45,7 +45,7 @@ Optionally you can
 Typical wiring, note the use of a buffer to shift the output of MISO (DO) to be compatible with 3v3 MCU's
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/TypicalWiring.jpg)
 <br>
-![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/2.5VRef.jpg)
+![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/16bit_10.jpg)
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/LTCvsTeens32-12bx21.jpg)
 ![header image](https://raw.github.com/KrisKasprzak/LTC1867/master/images/LTCvsTeensy32-16b.jpg)
 
