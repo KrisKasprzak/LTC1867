@@ -18,7 +18,7 @@ Perfomance is as follows
     <td>analogRead</td>
     <td> 17 uS</td>
     <td>  6 uS</td>
-    <td> ??? uS</td>
+    <td> 17 uS uS</td>
     <td> 243 uS</td>
   </tr>
 </table>
