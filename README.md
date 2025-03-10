@@ -1,5 +1,5 @@
 
-<b><h2><center>Library for 16 bit analog to digital converter from Analog Devices</center></h1></b>
+<b><h2><center>Library for the LTC1867, a 16 bit analog to digital converter from Analog Devices</center></h1></b>
 
 Text goes here
 
