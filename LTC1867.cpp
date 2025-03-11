@@ -42,7 +42,7 @@ bool LTC1867::init() {
 	pinMode(cspin, OUTPUT);
 
 	digitalWrite(cspin, HIGH);
-	delay(20);	
+	delay(5);	
 
 	CH = CH0;	
 	UNI = UNIPOLAR;
