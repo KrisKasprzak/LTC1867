@@ -88,7 +88,7 @@ uint16_t LTC1867::readBits() {
 	
 	if (SLP == SLEEP){
 		setSleepMode(AWAKE);
-		delay(60); // data sheet says to wait 60 ma, not sure the is the correct implementation of wake
+		delay(60); // data sheet says to wait 60 ms, not sure the is the correct implementation of wake
 	}
 	
 	SPI.beginTransaction(SPISettings(SPI_SPEED, MSBFIRST, SPI_MODE0));
@@ -115,7 +115,7 @@ void LTC1867::buildControlByte() {
 	//ySD		yOS		yS1		yS0		yCOM		UNI		SLP 	not used
 	
 	// ydd is part of the ChannelData (CH)
-	// shifting everything over 1 more to start at bit 7
+	// shifting everything over 1 more to start at bit 7 per the data sheet
 	CBYTE = 0;	
 	CBYTE = CH << 3;
 	CBYTE = CBYTE | (UNI << 2);
