@@ -1,7 +1,7 @@
 
 <b><h2><center>Library for the LTC1867, a 16 bit analog to digital converter from Analog Devices</center></h1></b>
 
-This library is itended for microcontroller applications using Teensy (3.x to 4.x), and ESP's where additional analog inputs or higher resulution inputs are needed. This library supports all the features offered by the LTC1867 such as reading an input channel in single or differential mode, using GND or CH7 as the common pin, and putting the analog to digital converter to sleep to save power between infrequent reads.
+This library is itended for microcontroller applications using Teensy (3.x to 4.x),  ESP's, and Arduinos where additional analog inputs or higher resulution inputs are needed. This library supports all the features offered by the LTC1867 such as reading an input channel in single or differential mode, using GND or CH7 as the common pin, and putting the analog to digital converter to sleep to save power between infrequent reads. See the .h file for all the constants to set channels and options.
 
 Perfomance is as follows
 <table>
@@ -24,10 +24,19 @@ Perfomance is as follows
 Implentation of this library is straightforward
 
 1. include the library
+<br>
+#include "LTC1867.h"
 2. create an object instance(s)
-3. initialize the object(s)
-4. call object.analogRead(channel)
-
+<br>
+LTC1867 MyADC(CS_PIN);
+5. initialize the object(s)
+<br>
+MyADC.init(); // object attempts to return true if successful
+7. call object.analogRead(channel)
+<br>
+uint16_t thing = MyADC.analogRead(CH0);
+<br>
+<br>
 Optionally you can
 1. change the VRef (see the data sheet for how to override the internal voltage regulator
   <br>
