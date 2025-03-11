@@ -48,6 +48,7 @@ bool LTC1867::init() {
 	UNI = UNIPOLAR;
 	SLP = AWAKE;
 	counter = 1;
+	vref = 2.5f;
 	
 	// this may not be a good test since CH0 may be grounded, but it's better than nothing...
 	test = analogRead(CH0);
@@ -140,7 +141,7 @@ void LTC1867::setVRef(float VRef = 2.5f){
 }
 		
 float LTC1867::getVolts(uint8_t Channel){
-	return analogRead(CH0) * vref / 65536.0f;
+	return analogRead(Channel) * vref / 65536.0f;
 }
 		
 
