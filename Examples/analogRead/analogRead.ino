@@ -24,41 +24,41 @@ CAUTION MISO will output approx 4.8 volts and will destroy the input pin or a Te
 
 #define CS_PIN 10
 
-LTC1867 ADC(CS_PIN);  // my chip select pin
+LTC1867 MyADC(CS_PIN);  // my chip select pin
 
 void setup() {
 
   Serial.begin(115200);
 
-  Serial.print("ADC.init() success: ");  // just sets some defaults
-  Serial.println(ADC.init());            // just sets some defaults
+  Serial.print("MyADC.init() success: ");  // just sets some defaults
+  Serial.println(MyADC.init());            // just sets some defaults
 
   // how to put the unit to sleep, if asleep and analogRead is called, unit will automaticall wake up and stay awake
   // meaning if you are going to use sleep mode, you will need to call it again after analogRead
-  // ADC.setSleepMode(SLEEP);
+  // MyADC.setSleepMode(SLEEP);
   Serial.print("read time (us): ");
   uint32_t timer = micros();
-  uint16_t bits = ADC.analogRead(CH0);
+  uint16_t bits = MyADC.analogRead(CH0);
   Serial.println(micros() - timer);
 }
 
 void loop() {
 
-  Serial.print(ADC.analogRead(CH0) * 3.3 / 65536.0, 3);
+  Serial.print(MyADC.analogRead(CH0) * 3.3 / 65536.0, 3); // change if using an Arduino
   Serial.print(",");
-  Serial.print(ADC.analogRead(CH1) * 2.5 / 65536.0, 3);
+  Serial.print(MyADC.analogRead(CH1) * 2.5 / 65536.0, 3);
   Serial.print(",");
-  Serial.print(ADC.analogRead(CH2) * 2.5 / 65536.0, 3);
+  Serial.print(MyADC.analogRead(CH2) * 2.5 / 65536.0, 3);
   Serial.print(",");
-  Serial.print(ADC.analogRead(CH3) * 2.5 / 65536.0, 3);
+  Serial.print(MyADC.analogRead(CH3) * 2.5 / 65536.0, 3);
   Serial.print(",");
-  Serial.print(ADC.analogRead(CH4) * 2.5 / 65536.0, 3);
+  Serial.print(MyADC.analogRead(CH4) * 2.5 / 65536.0, 3);
   Serial.print(",");
-  Serial.print(ADC.analogRead(CH5) * 2.5 / 65536.0, 3);
+  Serial.print(MyADC.analogRead(CH5) * 2.5 / 65536.0, 3);
   Serial.print(",");
-  Serial.print(ADC.analogRead(CH6) * 2.5 / 65536.0, 3);
+  Serial.print(MyADC.analogRead(CH6) * 2.5 / 65536.0, 3);
   Serial.print(",");
-  Serial.print(ADC.analogRead(CH7) * 2.5 / 65536.0, 3);
+  Serial.print(MyADC.analogRead(CH7) * 2.5 / 65536.0, 3);
 
   Serial.println();
   delay(100);
