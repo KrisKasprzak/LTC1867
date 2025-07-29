@@ -1,19 +1,23 @@
 
-<b><h2><center>Library for the LTC1867, a 16 bit analog to digital converter from Microchip</center></h1></b>
+<b><h2><center>Library for the LTC1867, a 16 bit analog to digital converter from Analog Devices</center></h1></b>
 
-This library is itended for microcontroller applications using Teensy (3.x to 4.x),  ESP's, and Arduinos where additional analog inputs are needed. This chip does NOT run faster than a Teensy 4.0 and from basic testing does NOT offer any better conrtrol over noise. This library implements only single ended inputs.
+This library is itended for microcontroller applications using Teensy (3.x to 4.x),  ESP's, and Arduinos where additional analog inputs or higher resulution inputs are needed. This library supports all the features offered by the LTC1867 such as reading an input channel in single or differential mode, using GND or CH7 as the common pin, and putting the analog to digital converter to sleep to save power between infrequent reads. See the .h file for all the constants to set channels and options.
 
 Perfomance is as follows
 <table>
   <tr>
     <th>Data</th>
-    <th>MCP3208</th>
+    <th>LTC1867</th>
+    <th>Teensy 3.2</th>
     <th>Teensy 4.0</th>
+    <th>ESP32</th>
   </tr>
   <tr>
     <td>analogRead</td>
     <td> 17 uS</td>
-    <td>  26 uS</td>
+    <td>  6 uS</td>
+    <td> 17 uS uS</td>
+    <td> 243 uS</td>
   </tr>
 </table>
 
