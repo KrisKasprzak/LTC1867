@@ -1,125 +1,73 @@
 /*
-  The MIT License (MIT)
+The MIT License (MIT)
 
-  library writen by Kris Kasprzak
-  
-  Permission is hereby granted, free of charge, to any person obtaining a copy of
-  this software and associated documentation files (the "Software"), to deal in
-  the Software without restriction, including without limitation the rights to
-  use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-  the Software, and to permit persons to whom the Software is furnished to do so,
-  subject to the following conditions:
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-  FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-  COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-  IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+library writen by Kris Kasprzak
 
-  On a personal note, if you develop an application or product using this library 
-  and make millions of dollars, I'm happy for you!
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+The above copyright notice and this permissionotice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. InO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-	rev		date			author				change
-	1.0		3/2025			kasprzak			initial code
+On a personal note, if you develop an application or product using this library
+and make millions of dollars, I'm happy for you!
+
+rev	date			author				change
+1.0	7-29-2025		kasprzak			initial code
+1.1	8-1-2025		kasprzak			added digitalRead
 
 
 */
 
-#ifndef LTC1867_MENU_H
-#define LTC1867_MENU_H
 
-// define SPI_SPEED 16000000
-#define SPI_SPEED 40000000
+#ifndef _MCP3208_H
+#define _MCP3208_H
 
-
-// differentail ended channels (Common = GND)
-#define CH0_CH1_GND 0b00000 
-#define CH2_CH3_GND 0b00010 
-#define CH4_CH5_GND 0b00100 
-#define CH6_CH7_GND 0b00110 
-#define CH1_CH0_GND 0b01000 
-#define CH3_CH2_GND 0b01010 
-#define CH5_CH4_GND 0b01100 
-#define CH7_CH6_GND 0b01110 
-
-// single ended channels (Common = GND)
-#define CH0 0b10000
-#define CH2 0b10010
-#define CH4 0b10100
-#define CH6 0b10110
-#define CH1 0b11000
-#define CH3 0b11010
-#define CH5 0b11100
-#define CH7 0b11110
-
-// single ended channels (Common = CH7/COM)
-#define CH0_CH7 0b10001 
-#define CH2_CH7 0b10011 
-#define CH4_CH7 0b10101 
-#define CH6_CH7 0b10111 
-#define CH1_CH7 0b11001 
-#define CH3_CH7 0b11011 
-#define CH5_CH7 0b11101 
-
-// SLP bit
-#define SLEEP 1
-#define AWAKE 0
-
-// UNI / Bipolar bit
-#define UNIPOLAR 1
-#define BIPOLAR 0
-
-
-#if ARDUINO >= 100
-	 #include "Arduino.h"
-	 #include "Print.h"
+#if (ARDUINO >= 100) 
+# include <Arduino.h>
 #else
-	
+# include <WProgram.h>
 #endif
 
-#ifdef __cplusplus
+#define MPC3208_VER 1.1
+
+#define CH0 0
+#define CH1 1
+#define CH2 2
+#define CH3 3
+#define CH4 4
+#define CH5 5
+#define CH6 6
+#define CH7 7
+
+#define SPI_SPEED    1000000
+
+#define DIGITAL_LIMIT 2500 // consider 2 volts or higher
+
+
+class MCP3208 {
+
+    public:
 	
-#endif
-
-#include <SPI.h>  
-#define LTC1867_VER 1.0
-
-class  LTC1867 {
+        MCP3208(uint8_t CS_PIN);  
 		
-	public:
-
-		LTC1867(int CS_PIN);
+        bool init();
 		
-		bool init();
-		
-		uint16_t analogRead(uint8_t Channel);	
-		
-		void setSleepMode(uint8_t Mode);
-		
-		void setVRef(float VRef);
-		
-		void analogReadAveraging(uint16_t Counter);			 
-		
-		float getVolts(uint8_t Channel);
+        uint16_t analogRead(uint8_t pin);	
+		bool digitalRead(uint8_t pin);		
 		
 	private:
+		uint8_t address = 0;
+        uint8_t cspin = 0;
 
-		uint8_t cspin = 0;
-		uint8_t CH = 0;
-		uint8_t UNI = 0;
-		uint8_t SLP = 0;
-		uint8_t CBYTE = 0;
-		uint16_t counter = 1;
-		uint16_t bits = 0;		
-		uint8_t Data[2] = {0,0};
-		float vref = 0.0f;
-		void buildControlByte();	
-		uint16_t readBits();			
-		
 };
-
-
-
 #endif
